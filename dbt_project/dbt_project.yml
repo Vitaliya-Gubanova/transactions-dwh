@@ -1,0 +1,17 @@
+name: transactions_dwh
+version: "1.0.0"
+config-version: 2
+
+profile: transactions_dwh
+
+model-paths: ["models"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  transactions_dwh:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

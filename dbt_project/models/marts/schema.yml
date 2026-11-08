@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: daily_turnover
+    description: Оборот, число транзакций и клиентов по дням
+    columns:
+      - name: event_date
+        data_tests:
+          - not_null
+          - unique
+      - name: tx_count
+        data_tests:
+          - not_null
+
+  - name: category_daily
+    description: Траты по категориям за каждый день
+    columns:
+      - name: category
+        data_tests:
+          - not_null
+
+  - name: top_merchants
+    description: Топ-10 мерчантов по сумме транзакций
+    columns:
+      - name: merchant
+        data_tests:
+          - not_null
+          - unique
